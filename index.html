@@ -1,0 +1,1633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Stackly – Corporate Business</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: #f4f7f6;
+      color: #0f2f2f;
+    }
+
+    /* ================= HEADER ================= */
+    header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  z-index: 1000;
+}
+
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: #0f2f2f;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 32px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #0f2f2f;
+      font-weight: 500;
+    }
+
+    .cta-btn {
+      background: #0f6f6a;
+      color: #fff;
+      padding: 10px 22px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* ================= HERO ================= */
+    .hero {
+      margin-top: 90px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      padding: 60px;
+    }
+
+    .hero-left {
+      background: linear-gradient(135deg, #062b2a, #0b3f3d);
+      color: white;
+      padding: 80px 60px;
+      border-radius: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.1);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      letter-spacing: 1px;
+      margin-bottom: 30px;
+    }
+
+    .hero-left h1 {
+      font-size: 54px;
+      line-height: 1.2;
+      margin-bottom: 30px;
+    }
+
+    .hero-left h1 span {
+      color: #3fd0c9;
+    }
+
+    .hero-left p {
+      color: #cfdede;
+      max-width: 480px;
+      line-height: 1.7;
+    }
+
+    .arrow-box {
+      margin-top: 40px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: #3fd0c9;
+    }
+
+    .arrow {
+      width: 50px;
+      height: 50px;
+      border: 2px solid #3fd0c9;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+
+    /* ================= HERO RIGHT ================= */
+    .hero-right {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+    }
+
+    .hero-right img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .stat-card {
+      position: absolute;
+      bottom: 40px;
+      left: 40px;
+      background: white;
+      padding: 24px 28px;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      width: 220px;
+    }
+
+    .avatars {
+      display: flex;
+      margin-bottom: 10px;
+    }
+
+    .avatars img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 2px solid white;
+      margin-left: -10px;
+    }
+
+    .stat-card h2 {
+      font-size: 36px;
+      color: #0f2f2f;
+    }
+
+    .stat-card p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* ================= MOBILE ================= */
+    @media(max-width: 900px) {
+      header {
+        padding: 16px 20px;
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 20px;
+      }
+
+      .hero-left {
+        padding: 50px 30px;
+      }
+
+      .hero-left h1 {
+        font-size: 36px;
+      }
+    }
+
+    /* ================= FEATURES ================= */
+.features-section {
+  padding: 100px 60px;
+  background: #f2f6f5;
+  text-align: center;
+}
+
+.features-header {
+  margin-bottom: 60px;
+}
+
+.features-badge {
+  display: inline-block;
+  background: rgba(15,111,106,0.1);
+  color: #0f6f6a;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.features-header h2 {
+  font-size: 42px;
+  color: #0f2f2f;
+}
+
+.features-header h2 span {
+  color: #0f6f6a;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.feature-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 18px;
+  text-align: left;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.feature-icon {
+  font-size: 40px;
+  color: #0f6f6a;
+  margin-bottom: 20px;
+}
+
+.feature-card h3 {
+  margin-bottom: 12px;
+  font-size: 20px;
+  color: #0f2f2f;
+}
+
+.feature-card p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+/* Mobile */
+@media(max-width: 900px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .features-header h2 {
+    font-size: 30px;
+  }
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 14px;
+}
+
+.login-btn {
+  text-decoration: none;
+  color: #0f6f6a;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: 2px solid #0f6f6a;
+}
+
+.register-btn {
+  text-decoration: none;
+  background: #0f6f6a;
+  color: white;
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: 20px;
+}
+
+/* ================= TRUSTED COMPANIES ================= */
+.trusted-section {
+  padding: 60px;
+  background: #f4f7f6;
+  text-align: center;
+}
+
+.trusted-logos {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 20px;
+  align-items: center;
+}
+
+.trusted-logo {
+  background: white;
+  padding: 18px;
+  border-radius: 12px;
+  font-weight: 600;
+  color: #999;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+/* ================= ABOUT SECTION ================= */
+.about-section {
+  padding: 100px 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.about-img {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.about-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-content .about-badge {
+  display: inline-block;
+  background: rgba(15,111,106,0.1);
+  color: #0f6f6a;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+.about-content h2 {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+.about-content h2 span {
+  color: #0f6f6a;
+}
+
+.about-stats {
+  display: flex;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.stat-box {
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.stat-box h3 {
+  font-size: 32px;
+  color: #0f6f6a;
+}
+
+.testimonial {
+  margin-top: 30px;
+  background: #0f6f6a;
+  color: white;
+  padding: 30px;
+  border-radius: 16px;
+}
+
+/* Mobile */
+@media(max-width: 900px) {
+  .trusted-logos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ================= SOLUTIONS ================= */
+.solutions-section {
+  padding: 120px 60px;
+  background: linear-gradient(135deg, #041b1d, #06292c);
+  color: white;
+  text-align: center;
+}
+
+.solutions-badge {
+  display: inline-block;
+  background: rgba(63,208,201,0.1);
+  color: #3fd0c9;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.solutions-section h2 {
+  font-size: 42px;
+  margin-bottom: 60px;
+}
+
+.solutions-section h2 span {
+  color: #3fd0c9;
+}
+
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.solution-card {
+  background: rgba(255,255,255,0.04);
+  padding: 40px 30px;
+  border-radius: 20px;
+  text-align: left;
+  min-height: 220px;
+  transition: 0.4s;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.solution-card:hover {
+  transform: translateY(-12px);
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(63,208,201,0.4);
+}
+
+.solution-icon {
+  font-size: 32px;
+  color: #3fd0c9;
+  margin-bottom: 20px;
+}
+
+.solution-card h3 {
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+/* Slider dots */
+.solution-dots {
+  margin-top: 50px;
+}
+
+.solution-dots span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 50%;
+  margin: 0 6px;
+}
+
+.solution-dots .active {
+  width: 30px;
+  border-radius: 20px;
+  background: #3fd0c9;
+}
+
+/* Mobile */
+@media(max-width: 900px) {
+  .solutions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .solutions-section h2 {
+    font-size: 30px;
+  }
+}
+
+/* ================= PROJECTS ================= */
+.projects-section {
+  padding: 100px 60px;
+  background: #f4f7f6;
+}
+
+.projects-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.projects-badge {
+  display: inline-block;
+  background: rgba(15,111,106,0.1);
+  color: #0f6f6a;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.projects-header h2 {
+  font-size: 42px;
+}
+
+.projects-header h2 span {
+  color: #0f6f6a;
+}
+
+.more-btn {
+  background: #0f6f6a;
+  color: white;
+  padding: 10px 22px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+}
+
+.projects-left,
+.projects-right {
+  display: grid;
+  gap: 30px;
+}
+
+.project-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-label {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+/* Stats bar */
+.projects-stats {
+  margin-top: 60px;
+  background: #1f8f8b;
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  text-align: center;
+  padding: 40px;
+  border-radius: 20px;
+}
+
+.projects-stats h3 {
+  font-size: 36px;
+}
+
+/* Mobile */
+@media(max-width: 900px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+}
+
+/* ================= TESTIMONIALS ================= */
+.testimonials-section {
+  padding: 100px 60px;
+  background: #e8f1f0;
+}
+
+.testimonials-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.testimonials-badge {
+  font-size: 12px;
+  color: #0f6f6a;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.testimonials-header h2 {
+  font-size: 40px;
+}
+
+.testimonials-header h2 span {
+  color: #0f6f6a;
+}
+
+.testimonial-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.testimonial-controls button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: white;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* Cards */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.testimonial-card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  position: relative;
+  transition: 0.3s;
+}
+
+.testimonial-card.active {
+  border: 2px solid #0f6f6a;
+  transform: translateY(-10px);
+}
+
+.testimonial-card p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.testimonial-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.testimonial-user img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+
+/* Dots */
+.testimonial-dots {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.testimonial-dots span {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #aaa;
+  border-radius: 50%;
+  margin: 0 6px;
+}
+
+.testimonial-dots .active {
+  width: 24px;
+  border-radius: 20px;
+  background: #0f6f6a;
+}
+
+/* Mobile */
+@media(max-width: 900px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonials-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}
+
+/* ================= FAQ ================= */
+.faq-section {
+  padding: 100px 60px;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: center;
+  background: #f4f7f6;
+}
+
+.help-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.help-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.help-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.2), rgba(0,0,0,0.6));
+  color: white;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.help-box {
+  background: #1f8f8b;
+  padding: 20px;
+  border-radius: 16px;
+  margin-top: 20px;
+  width: 220px;
+}
+
+.faq-list .faq-item {
+  background: white;
+  padding: 18px 22px;
+  border-radius: 14px;
+  margin-bottom: 14px;
+  cursor: pointer;
+}
+
+.faq-answer {
+  display: none;
+  font-size: 14px;
+  margin-top: 10px;
+  color: #555;
+}
+
+/* ================= CONTACT ================= */
+.contact-section {
+  padding: 120px 60px;
+  background: linear-gradient(135deg, #041b1d, #06292c);
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.world-map {
+  background: url("https://i.imgur.com/3ZQ3Z9O.png") center/contain no-repeat;
+  height: 300px;
+}
+
+.contact-form {
+  background: rgba(255,255,255,0.05);
+  padding: 40px;
+  border-radius: 20px;
+}
+
+.contact-form h3 span {
+  color: #3fd0c9;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  color: white;
+}
+
+.contact-form button {
+  margin-top: 20px;
+  background: #3fd0c9;
+  border: none;
+  padding: 12px 26px;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Mobile */
+@media(max-width: 900px) {
+  .faq-section,
+  .contact-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact-section {
+  padding: 120px 60px;
+  background: linear-gradient(135deg, #041b1d, #06292c);
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.contact-form {
+  background: rgba(255,255,255,0.05);
+  padding: 40px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 500px;
+}
+
+/* ================= BLOG ================= */
+.blog-section {
+  padding: 100px 60px;
+  background: #f4f7f6;
+  text-align: center;
+}
+
+.blog-badge {
+  font-size: 12px;
+  color: #0f6f6a;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.blog-section h2 {
+  font-size: 42px;
+  margin-bottom: 50px;
+}
+
+.blog-section h2 span {
+  color: #0f6f6a;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.blog-card {
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  text-align: left;
+}
+
+.blog-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.blog-content {
+  padding: 20px;
+}
+
+.blog-tag {
+  font-size: 12px;
+  color: #0f6f6a;
+  font-weight: 600;
+}
+
+.blog-content h3 {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+/* ================= CTA ================= */
+.cta-section {
+  margin: 80px 60px;
+  background: linear-gradient(135deg, #1f8f8b, #0f6f6a);
+  border-radius: 24px;
+  padding: 60px;
+  color: white;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.cta-btn {
+  background: black;
+  color: white;
+  padding: 12px 26px;
+  border-radius: 30px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  padding: 80px 60px 30px;
+  background: #e8f1f0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 40px;
+}
+
+.footer h4 {
+  margin-bottom: 15px;
+}
+
+.footer ul {
+  list-style: none;
+}
+
+.footer ul li {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+.footer input {
+  padding: 10px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #666;
+}
+
+/* Mobile */
+@media(max-width: 900px) {
+  .blog-grid,
+  .cta-section,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ================= SOCIAL ICONS ================= */
+.social-icons {
+  display: flex;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.social-icons a {
+  width: 38px;
+  height: 38px;
+  background: #0f6f6a;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  background: #1f8f8b;
+  transform: translateY(-4px);
+}
+
+/* ================= HAMBURGER ================= */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* ================= MOBILE MENU ================= */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  background: #041b1d;
+  color: white;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-100%);
+  transition: 0.4s ease;
+}
+
+.mobile-menu.active {
+  transform: translateY(0);
+}
+
+.mobile-menu ul {
+  list-style: none;
+  text-align: center;
+}
+
+.mobile-menu ul li {
+  margin: 20px 0;
+}
+
+.mobile-menu ul li a {
+  color: white;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.mobile-auth {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* ================= MOBILE FIX ================= */
+@media(max-width: 900px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .desktop-nav,
+  .desktop-auth {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .hero,
+  .features-section,
+  .about-section,
+  .projects-section,
+  .testimonials-section,
+  .faq-section,
+  .blog-section,
+  .cta-section,
+  .footer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media(max-width: 900px) {
+
+  .desktop-nav,
+  .desktop-auth {
+    display: none !important;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 26px;
+  }
+
+  section {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .cta-section {
+    margin: 40px 20px !important;
+  }
+
+  .projects-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .trusted-logos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.mobile-menu {
+  width: 100vw;
+  height: 100vh;
+}
+
+/* ================= NEWSLETTER ================= */
+.newsletter-box {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.newsletter-box input {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.newsletter-box button {
+  background: #0f6f6a;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.newsletter-box button:hover {
+  background: #1f8f8b;
+}
+
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">
+    <img src="assets/images/logo/stackly_logo.webp" alt="Stackly Logo" style="height:40px;">
+  </div>
+
+  <nav class="desktop-nav">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Pages</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Portfolio</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="auth-buttons desktop-auth">
+    <a href="#" class="login-btn">Login</a>
+    <a href="#" class="register-btn">Register</a>
+  </div>
+
+  <!-- Hamburger -->
+  <div class="hamburger" onclick="toggleMenu()">
+    <i class="fa-solid fa-bars"></i>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="close-btn" onclick="toggleMenu()">
+    <i class="fa-solid fa-xmark"></i>
+  </div>
+
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Pages</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Portfolio</a></li>
+    <li><a href="#">Blog</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+
+  <div class="mobile-auth">
+    <a href="#" class="login-btn">Login</a>
+    <a href="#" class="register-btn">Register</a>
+  </div>
+</div>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+
+    <!-- LEFT -->
+    <div class="hero-left">
+      <div class="badge">RECOGNIZED FOR EXCELLENCE</div>
+
+      <h1>
+        Driving Excellence <br>
+        Through Evolution <br>
+        and <span>Trust.</span>
+      </h1>
+
+      <p>
+        Represents growth, expansion, and modern business solutions
+        to help companies scale and succeed globally.
+      </p>
+
+      <div class="arrow-box">
+        <div class="arrow">↗</div>
+        <span>Scroll to explore</span>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="hero-right">
+      <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1400" alt="Business Man">
+
+      <div class="stat-card">
+        <div class="avatars">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg">
+          <img src="https://randomuser.me/api/portraits/men/45.jpg">
+          <img src="https://randomuser.me/api/portraits/men/64.jpg">
+        </div>
+        <h2>30K</h2>
+        <p>Happy customers worldwide</p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- FEATURES SECTION -->
+<section class="features-section">
+  <div class="features-header">
+    <span class="features-badge">CHOOSE THE BEST</span>
+    <h2>Empowering Business with <span>Expertise.</span></h2>
+  </div>
+
+  <div class="features-grid">
+
+    <div class="feature-card">
+      <div class="feature-icon">💡</div>
+      <h3>Innovative Solutions</h3>
+      <p>
+        We stay ahead of the curve, leveraging cutting-edge technologies
+        and strategies to keep you competitive in a marketplace.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">🏆</div>
+      <h3>Award-Winning Expertise</h3>
+      <p>
+        Recognized by industry leaders, our award-winning team has
+        a proven record of delivering excellence across projects.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">🎧</div>
+      <h3>Dedicated Support</h3>
+      <p>
+        Our team is always available to address your concerns,
+        providing quick and effective solutions for your business.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- SOLUTIONS SECTION -->
+<section class="solutions-section">
+
+  <span class="solutions-badge">OUR SOLUTIONS</span>
+  <h2>Solutions to Transform Your <span>Business.</span></h2>
+
+  <div class="solutions-grid">
+
+    <div class="solution-card">
+      <div class="solution-icon">❄️</div>
+      <h3>Training and Development Programs</h3>
+    </div>
+
+    <div class="solution-card">
+      <div class="solution-icon">📊</div>
+      <h3>Business Strategy Development</h3>
+    </div>
+
+    <div class="solution-card">
+      <div class="solution-icon">🎧</div>
+      <h3>Customer Experience Solutions</h3>
+    </div>
+
+    <div class="solution-card">
+      <div class="solution-icon">🌱</div>
+      <h3>Sustainability and ESG Consulting</h3>
+    </div>
+
+  </div>
+
+  <div class="solution-dots">
+    <span class="active"></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+</section>
+
+<!-- PROJECTS SECTION -->
+<section class="projects-section">
+
+  <div class="projects-header">
+    <div>
+      <span class="projects-badge">PROUD PROJECTS</span>
+      <h2>Breaking Boundaries,<br>Building <span>Dreams.</span></h2>
+      <p>We work closely with our clients to understand their needs and craft solutions.</p>
+    </div>
+  </div>
+
+  <div class="projects-grid">
+
+    <div class="projects-left">
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1400">
+        <div class="project-label">Connect<br><strong>Event Management Platform</strong></div>
+      </div>
+
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1400">
+        <div class="project-label">Support<br><strong>Interactive Learning Platform</strong></div>
+      </div>
+    </div>
+
+    <div class="projects-right">
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=1200">
+        <div class="project-label">Empower<br><strong>Digital Marketing Campaign</strong></div>
+      </div>
+
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1200">
+        <div class="project-label">Business<br><strong>Environmental Impact Dashboard</strong></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- STATS -->
+  <div class="projects-stats">
+    <div>
+      <h3>93%</h3>
+      <p>Projects Completed</p>
+    </div>
+    <div>
+      <h3>20M</h3>
+      <p>Reach Worldwide</p>
+    </div>
+    <div>
+      <h3>8.5X</h3>
+      <p>Faster Growth</p>
+    </div>
+    <div>
+      <h3>100+</h3>
+      <p>Awards Achieved</p>
+    </div>
+  </div>
+
+</section>
+
+<!-- TESTIMONIALS SECTION -->
+<section class="testimonials-section">
+
+  <div class="testimonials-header">
+    <div>
+      <span class="testimonials-badge">CLIENTS FEEDBACK</span>
+      <h2>Success <span>Stories</span> Fuel<br>our Innovation.</h2>
+    </div>
+
+    <div class="testimonial-controls">
+      <button>‹</button>
+      <button>›</button>
+    </div>
+  </div>
+
+  <div class="testimonials-grid">
+
+    <div class="testimonial-card">
+      <p>
+        Working with Stackly has been a game-changer for our business.
+        Their team's professionalism and innovative solutions helped us scale.
+      </p>
+      <div class="testimonial-user">
+        <img src="https://randomuser.me/api/portraits/men/11.jpg">
+        <div>
+          <strong>Guy Hawkins</strong><br>
+          <small>Co Founder</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card active">
+      <p>
+        The results we’ve seen after partnering with Stackly are beyond expectations.
+        Their commitment to success makes them a trusted partner.
+      </p>
+      <div class="testimonial-user">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg">
+        <div>
+          <strong>Ralph Edwards</strong><br>
+          <small>Co Founder</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <p>
+        We’ve been working with Stackly for years, and they continue to deliver.
+        Truly a reliable and innovative company.
+      </p>
+      <div class="testimonial-user">
+        <img src="https://randomuser.me/api/portraits/men/56.jpg">
+        <div>
+          <strong>Devon Lane</strong><br>
+          <small>Co Founder</small>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="testimonial-dots">
+    <span></span>
+    <span class="active"></span>
+    <span></span>
+  </div>
+
+</section>
+
+<!-- FAQ SECTION -->
+<section class="faq-section">
+
+  <div class="help-card">
+    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1200">
+    <div class="help-overlay">
+      <h2>Need Help? Start Here...</h2>
+
+      <div class="help-box">
+        <strong>Get Started Free Call?</strong>
+        <p>📞 1-888-452-1505</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-list">
+    <div class="faq-item" onclick="toggleFaq(this)">
+      What services does Stackly offer?
+      <div class="faq-answer">
+        We provide digital transformation, consulting, SaaS solutions,
+        and enterprise business services.
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      How do I get started with Stackly?
+      <div class="faq-answer">
+        Contact us through the form and our team will schedule a consultation.
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      How do you ensure project success?
+      <div class="faq-answer">
+        We follow agile methodology with continuous monitoring and reporting.
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      Can I track project progress?
+      <div class="faq-answer">
+        Yes, you’ll get access to dashboards and regular updates.
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- BLOG SECTION -->
+<section class="blog-section">
+  <span class="blog-badge">INSIGHTS & IDEAS</span>
+  <h2>The Ultimate <span>Resource.</span></h2>
+
+  <div class="blog-grid">
+    <div class="blog-card">
+      <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1200">
+      <div class="blog-content">
+        <span class="blog-tag">Business</span>
+        <h3>Innovative Solutions for every Business Success.</h3>
+        <small>By Elinien Loma</small>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200">
+      <div class="blog-content">
+        <span class="blog-tag">Business</span>
+        <h3>Harnessing Digital Transform Roadmap.</h3>
+        <small>By Elinien Loma</small>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=1200">
+      <div class="blog-content">
+        <span class="blog-tag">Business</span>
+        <h3>Mastering Change Management Lessons.</h3>
+        <small>By Elinien Loma</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta-section">
+  <div>
+    <h2>Let’s Build Future Together.</h2>
+    <a href="#" class="cta-btn">Get Started Now</a>
+  </div>
+  <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1200" style="width:100%; border-radius:20px;">
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+
+  <div class="footer-grid">
+<div>
+  <img src="assets/images/logo/stackly_logo.webp" style="height:40px;">
+  <p>Developing personalized customer journeys for better growth.</p>
+
+  <div class="social-icons">
+    <a href="mailto:stackly@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+    <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+    <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+    <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+  </div>
+</div>
+
+    <div>
+      <h4>Services</h4>
+      <ul>
+        <li>Customer Experience</li>
+        <li>Training Programs</li>
+        <li>Business Strategy</li>
+        <li>ESG Consulting</li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Resources</h4>
+      <ul>
+        <li>Contact Us</li>
+        <li>Careers</li>
+        <li>News</li>
+        <li>Feedback</li>
+      </ul>
+    </div>
+
+<div class="newsletter">
+  <h4>Subscribe Newsletter</h4>
+  <div class="newsletter-box">
+    <input type="email" placeholder="Enter email">
+    <button>Subscribe</button>
+  </div>
+</div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Stackly. All rights reserved.</p>
+    <p>Privacy • Terms • Support</p>
+  </div>
+
+</footer>
+
+  <script>
+    // Subtle animation on load
+    document.querySelector('.hero-left').style.opacity = 0;
+    document.querySelector('.hero-right').style.opacity = 0;
+
+    window.onload = () => {
+      document.querySelector('.hero-left').style.transition = "1s";
+      document.querySelector('.hero-right').style.transition = "1s";
+
+      document.querySelector('.hero-left').style.opacity = 1;
+      document.querySelector('.hero-right').style.opacity = 1;
+    }
+
+    function toggleFaq(item) {
+  const answer = item.querySelector(".faq-answer");
+  answer.style.display = 
+    answer.style.display === "block" ? "none" : "block";
+}
+
+function toggleMenu() {
+  document.getElementById("mobileMenu").classList.toggle("active");
+}
+
+function toggleMenu() {
+  const menu = document.getElementById("mobileMenu");
+  menu.classList.toggle("active");
+  document.body.style.overflow = menu.classList.contains("active") ? "hidden" : "auto";
+}
+
+  </script>
+
+</body>
+</html>
