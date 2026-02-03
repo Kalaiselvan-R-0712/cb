@@ -773,54 +773,6 @@
   color: #555;
 }
 
-/* ================= CONTACT ================= */
-.contact-section {
-  padding: 120px 60px;
-  background: linear-gradient(135deg, #041b1d, #06292c);
-  color: white;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-}
-
-.world-map {
-  background: url("https://i.imgur.com/3ZQ3Z9O.png") center/contain no-repeat;
-  height: 300px;
-}
-
-.contact-form {
-  background: rgba(255,255,255,0.05);
-  padding: 40px;
-  border-radius: 20px;
-}
-
-.contact-form h3 span {
-  color: #3fd0c9;
-}
-
-.contact-form input,
-.contact-form textarea,
-.contact-form select {
-  width: 100%;
-  margin-top: 12px;
-  padding: 10px;
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid rgba(255,255,255,0.3);
-  color: white;
-}
-
-.contact-form button {
-  margin-top: 20px;
-  background: #3fd0c9;
-  border: none;
-  padding: 12px 26px;
-  border-radius: 20px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
 /* Mobile */
 @media(max-width: 900px) {
   .faq-section,
@@ -1152,30 +1104,348 @@
   background: #1f8f8b;
 }
 
+.logo a img,
+.footer a img {
+  cursor: pointer;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #555;
+}
+
+.footer a:hover {
+  color: #0f6f6a;
+}
+
+/* ================= SOCIAL ICONS (PRO FIX) ================= */
+.social-icons {
+  display: flex;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.social-icons a {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, #0f6f6a, #1f8f8b);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 18px;
+  box-shadow: 0 8px 20px rgba(15, 111, 106, 0.35);
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 14px 30px rgba(15, 111, 106, 0.55);
+  background: linear-gradient(135deg, #1f8f8b, #3fd0c9);
+}
+
+.social-icons i {
+  line-height: 1;
+}
+
+/* ================= UNIVERSAL INTERACTIONS ================= */
+
+/* Make everything smoothly animated */
+a, button, .feature-card, .solution-card, .project-card,
+.testimonial-card, .stat-box, .trusted-logo,
+.faq-item, .blog-card, .cta-btn, .login-btn, .register-btn {
+  transition: all 0.3s ease;
+}
+
+/* Links */
+a:hover, a:focus, a:active {
+  color: #0f6f6a;
+}
+
+/* Buttons */
+button:hover, button:focus, button:active,
+.cta-btn:hover, .login-btn:hover, .register-btn:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(15,111,106,0.3);
+  opacity: 0.95;
+}
+
+/* Cards (Features, Blogs, Testimonials, Stats) */
+.feature-card:hover, .feature-card:active,
+.blog-card:hover, .blog-card:active,
+.testimonial-card:hover, .testimonial-card:active,
+.stat-box:hover, .stat-box:active {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+}
+
+/* Project images zoom */
+.project-card img {
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover img,
+.project-card:active img {
+  transform: scale(1.08);
+}
+
+/* Trusted logos */
+.trusted-logo:hover,
+.trusted-logo:active {
+  transform: translateY(-6px) scale(1.05);
+  color: #0f6f6a;
+}
+
+/* FAQ items */
+.faq-item:hover,
+.faq-item:active {
+  background: #0f6f6a;
+  color: white;
+  transform: translateX(6px);
+}
+
+/* Inputs */
+input:focus, textarea:focus, select:focus {
+  border-color: #3fd0c9;
+  box-shadow: 0 0 0 3px rgba(63,208,201,0.2);
+}
+
+/* Images everywhere */
+img:hover {
+  filter: brightness(1.05);
+}
+
+/* Nav links underline effect */
+nav ul li a {
+  position: relative;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: #0f6f6a;
+  transition: 0.3s;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* ================= ULTIMATE HOVER EFFECT SYSTEM ================= */
+
+/* Smooth everything */
+* {
+  transition: all 0.25s ease;
+}
+
+/* ---------- Magnetic Buttons ---------- */
+button, .cta-btn, .login-btn, .register-btn {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate; /* modern trick */
+}
+
+button::after, .cta-btn::after,
+.login-btn::after, .register-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(255,255,255,0.3), transparent 70%);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+button:hover::after,
+.cta-btn:hover::after,
+.login-btn:hover::after,
+.register-btn:hover::after {
+  opacity: 1;
+}
+
+button:hover,
+.cta-btn:hover,
+.login-btn:hover,
+.register-btn:hover {
+  transform: translateY(-6px) scale(1.06);
+  box-shadow: 0 18px 40px rgba(15,111,106,0.45);
+}
+
+/* Mobile press */
+button:active,
+.cta-btn:active {
+  transform: scale(0.95);
+}
+
+/* ---------- Glass Cards ---------- */
+.feature-card,
+.blog-card,
+.testimonial-card,
+.stat-box {
+  backdrop-filter: blur(6px);
+}
+
+.feature-card:hover,
+.blog-card:hover,
+.testimonial-card:hover,
+.stat-box:hover {
+  transform: translateY(-14px) scale(1.03);
+  box-shadow: 
+    0 25px 60px rgba(0,0,0,0.18),
+    inset 0 0 0 1px rgba(63,208,201,0.4);
+}
+
+/* ---------- Neon Border Glow ---------- */
+.feature-card:hover,
+.solution-card:hover,
+.blog-card:hover {
+  border: 1px solid #3fd0c9;
+  box-shadow:
+    0 0 0 1px rgba(63,208,201,0.4),
+    0 0 25px rgba(63,208,201,0.4);
+}
+
+/* ---------- Project Image Parallax ---------- */
+.project-card {
+  cursor: pointer;
+}
+
+.project-card img {
+  transition: 0.5s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.12) rotate(1deg);
+}
+
+.project-label {
+  transition: 0.4s;
+}
+
+.project-card:hover .project-label {
+  transform: translateY(-10px);
+  background: rgba(15,111,106,0.85);
+}
+
+/* ---------- Trusted Logos ---------- */
+.trusted-logo {
+  filter: grayscale(100%);
+  opacity: 0.7;
+}
+
+.trusted-logo:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.1) rotate(-2deg);
+}
+
+/* ---------- Nav Link Luxury Underline ---------- */
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #3fd0c9, #0f6f6a);
+  transition: 0.4s;
+  transform: translateX(-50%);
+}
+
+nav ul li a:hover::after {
+  width: 120%;
+}
+
+/* ---------- Social Icons Neon ---------- */
+.social-icons a:hover {
+  box-shadow:
+    0 0 10px rgba(63,208,201,0.6),
+    0 0 25px rgba(63,208,201,0.6),
+    0 0 50px rgba(63,208,201,0.4);
+  transform: rotate(8deg) scale(1.15);
+}
+
+/* ---------- FAQ Slide + Glow ---------- */
+.faq-item:hover {
+  transform: translateX(10px);
+  background: linear-gradient(135deg, #0f6f6a, #1f8f8b);
+  color: white;
+  box-shadow: 0 12px 30px rgba(15,111,106,0.4);
+}
+
+/* ---------- Inputs Luxury Focus ---------- */
+input:focus,
+textarea:focus {
+  border-color: #3fd0c9;
+  box-shadow:
+    0 0 0 3px rgba(63,208,201,0.25),
+    0 0 20px rgba(63,208,201,0.4);
+}
+
+/* ---------- CTA Section Glow ---------- */
+.cta-section:hover {
+  box-shadow:
+    0 30px 80px rgba(15,111,106,0.5);
+  transform: scale(1.01);
+}
+
+/* ---------- Global Image Hover ---------- */
+img:hover {
+  filter: brightness(1.1) contrast(1.05);
+}
+
+/* ---------- Mobile Touch Feedback ---------- */
+@media (hover: none) {
+  .feature-card:active,
+  .blog-card:active,
+  .project-card:active,
+  .solution-card:active {
+    transform: scale(0.96);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  }
+}
+
+/* Fix: keep button text above glow */
+button, .cta-btn, .login-btn, .register-btn {
+  z-index: 1;
+}
+
+button::after, .cta-btn::after,
+.login-btn::after, .register-btn::after {
+  z-index: -1;
+}
+
   </style>
 </head>
 <body>
 
 <!-- HEADER -->
 <header>
-  <div class="logo">
+<div class="logo">
+  <a href="index.html">
     <img src="assets/images/logo/stackly_logo.webp" alt="Stackly Logo" style="height:40px;">
-  </div>
+  </a>
+</div>
 
   <nav class="desktop-nav">
     <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Pages</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Portfolio</a></li>
-      <li><a href="#">Blog</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="404.html">About</a></li>
+      <li><a href="404.html">Services</a></li>
+      <li><a href="404.html">Packages</a></li>
+      <li><a href="404.html">Contack</a></li>
+      <li><a href="404.html">Dashboard</a></li>
     </ul>
   </nav>
 
   <div class="auth-buttons desktop-auth">
-    <a href="#" class="login-btn">Login</a>
-    <a href="#" class="register-btn">Register</a>
+    <a href="404.html" class="login-btn">Login</a>
+    <a href="404.html" class="register-btn">Register</a>
   </div>
 
   <!-- Hamburger -->
@@ -1190,18 +1460,18 @@
     <i class="fa-solid fa-xmark"></i>
   </div>
 
-  <ul>
-    <li><a href="#">Home</a></li>
-    <li><a href="#">Pages</a></li>
-    <li><a href="#">Services</a></li>
-    <li><a href="#">Portfolio</a></li>
-    <li><a href="#">Blog</a></li>
-    <li><a href="#">Contact</a></li>
-  </ul>
-
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="404.html">About</a></li>
+      <li><a href="404.html">Services</a></li>
+      <li><a href="404.html">Packages</a></li>
+      <li><a href="404.html">Contack</a></li>
+      <li><a href="404.html">Dashboard</a></li>
+    </ul>
+    
   <div class="mobile-auth">
-    <a href="#" class="login-btn">Login</a>
-    <a href="#" class="register-btn">Register</a>
+    <a href="404.html" class="login-btn">Login</a>
+    <a href="404.html" class="register-btn">Register</a>
   </div>
 </div>
 
@@ -1222,22 +1492,17 @@
         Represents growth, expansion, and modern business solutions
         to help companies scale and succeed globally.
       </p>
-
-      <div class="arrow-box">
-        <div class="arrow">↗</div>
-        <span>Scroll to explore</span>
-      </div>
     </div>
 
     <!-- RIGHT -->
     <div class="hero-right">
-      <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1400" alt="Business Man">
+      <img src="assets/images/site images/hero.webp" alt="Business Man">
 
       <div class="stat-card">
         <div class="avatars">
-          <img src="https://randomuser.me/api/portraits/men/32.jpg">
-          <img src="https://randomuser.me/api/portraits/men/45.jpg">
-          <img src="https://randomuser.me/api/portraits/men/64.jpg">
+          <img src="assets/images/site images/tg1.webp">
+          <img src="assets/images/site images/tg2.webp">
+          <img src="assets/images/site images/tg3.webp">
         </div>
         <h2>30K</h2>
         <p>Happy customers worldwide</p>
@@ -1315,7 +1580,6 @@
 
   </div>
 
-  <div class="solution-dots">
     <span class="active"></span>
     <span></span>
     <span></span>
@@ -1339,24 +1603,24 @@
 
     <div class="projects-left">
       <div class="project-card">
-        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1400">
+        <img src="assets/images/site images/cs1.webp">
         <div class="project-label">Connect<br><strong>Event Management Platform</strong></div>
       </div>
 
       <div class="project-card">
-        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1400">
+        <img src="assets/images/site images/cs3.webp">
         <div class="project-label">Support<br><strong>Interactive Learning Platform</strong></div>
       </div>
     </div>
 
     <div class="projects-right">
       <div class="project-card">
-        <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=1200">
+        <img src="assets/images/site images/cs2.webp">
         <div class="project-label">Empower<br><strong>Digital Marketing Campaign</strong></div>
       </div>
 
       <div class="project-card">
-        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1200">
+        <img src="assets/images/site images/cs4.webp">
         <div class="project-label">Business<br><strong>Environmental Impact Dashboard</strong></div>
       </div>
     </div>
@@ -1395,8 +1659,7 @@
     </div>
 
     <div class="testimonial-controls">
-      <button>‹</button>
-      <button>›</button>
+
     </div>
   </div>
 
@@ -1408,7 +1671,7 @@
         Their team's professionalism and innovative solutions helped us scale.
       </p>
       <div class="testimonial-user">
-        <img src="https://randomuser.me/api/portraits/men/11.jpg">
+        <img src="assets/images/site images/tg1.webp">
         <div>
           <strong>Guy Hawkins</strong><br>
           <small>Co Founder</small>
@@ -1422,9 +1685,9 @@
         Their commitment to success makes them a trusted partner.
       </p>
       <div class="testimonial-user">
-        <img src="https://randomuser.me/api/portraits/men/32.jpg">
+        <img src="assets/images/site images/tg2.webp">
         <div>
-          <strong>Ralph Edwards</strong><br>
+          <strong>Amy Johnson</strong><br>
           <small>Co Founder</small>
         </div>
       </div>
@@ -1436,7 +1699,7 @@
         Truly a reliable and innovative company.
       </p>
       <div class="testimonial-user">
-        <img src="https://randomuser.me/api/portraits/men/56.jpg">
+        <img src="assets/images/site images/tg3.webp">
         <div>
           <strong>Devon Lane</strong><br>
           <small>Co Founder</small>
@@ -1446,7 +1709,6 @@
 
   </div>
 
-  <div class="testimonial-dots">
     <span></span>
     <span class="active"></span>
     <span></span>
@@ -1458,7 +1720,7 @@
 <section class="faq-section">
 
   <div class="help-card">
-    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1200">
+    <img src="assets/images/site images/hc.webp">
     <div class="help-overlay">
       <h2>Need Help? Start Here...</h2>
 
@@ -1509,7 +1771,7 @@
 
   <div class="blog-grid">
     <div class="blog-card">
-      <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1200">
+      <img src="assets/images/site images/dt2.webp">
       <div class="blog-content">
         <span class="blog-tag">Business</span>
         <h3>Innovative Solutions for every Business Success.</h3>
@@ -1518,7 +1780,7 @@
     </div>
 
     <div class="blog-card">
-      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200">
+      <img src="assets/images/site images/dt1.webp">
       <div class="blog-content">
         <span class="blog-tag">Business</span>
         <h3>Harnessing Digital Transform Roadmap.</h3>
@@ -1527,7 +1789,7 @@
     </div>
 
     <div class="blog-card">
-      <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=1200">
+      <img src="assets/images/site images/dt3.webp">
       <div class="blog-content">
         <span class="blog-tag">Business</span>
         <h3>Mastering Change Management Lessons.</h3>
@@ -1541,9 +1803,9 @@
 <section class="cta-section">
   <div>
     <h2>Let’s Build Future Together.</h2>
-    <a href="#" class="cta-btn">Get Started Now</a>
+    <a href="404.html" class="cta-btn">Get Started Now</a>
   </div>
-  <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1200" style="width:100%; border-radius:20px;">
+  <img src="assets/images/site images/bf.webp" style="width:100%; border-radius:20px;">
 </section>
 
 <!-- FOOTER -->
@@ -1551,49 +1813,60 @@
 
   <div class="footer-grid">
 <div>
+<a href="index.html">
   <img src="assets/images/logo/stackly_logo.webp" style="height:40px;">
+</a>
   <p>Developing personalized customer journeys for better growth.</p>
 
   <div class="social-icons">
-    <a href="mailto:stackly@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-    <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
-    <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-    <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+  <a href="404.html" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+  <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+  <a href="404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+  <a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
   </div>
 </div>
 
-    <div>
-      <h4>Services</h4>
-      <ul>
-        <li>Customer Experience</li>
-        <li>Training Programs</li>
-        <li>Business Strategy</li>
-        <li>ESG Consulting</li>
-      </ul>
-    </div>
+<div>
+  <h4>Services</h4>
+  <ul>
+    <li><a href="404.html">Customer Experience</a></li>
+    <li><a href="404.html">Training Programs</a></li>
+    <li><a href="404.html">Business Strategy</a></li>
+    <li><a href="404.html">ESG Consulting</a></li>
+  </ul>
+</div>
 
-    <div>
-      <h4>Resources</h4>
-      <ul>
-        <li>Contact Us</li>
-        <li>Careers</li>
-        <li>News</li>
-        <li>Feedback</li>
-      </ul>
-    </div>
+<div>
+  <h4>Resources</h4>
+  <ul>
+    <li><a href="404.html">Contact Us</a></li>
+    <li><a href="404.html">Careers</a></li>
+    <li><a href="404.html">News</a></li>
+    <li><a href="404.html">Feedback</a></li>
+  </ul>
+</div>
 
 <div class="newsletter">
   <h4>Subscribe Newsletter</h4>
-  <div class="newsletter-box">
-    <input type="email" placeholder="Enter email">
-    <button>Subscribe</button>
-  </div>
+  <form class="newsletter-box" onsubmit="handleSubscribe(event)">
+    <input 
+      type="email" 
+      id="newsletterEmail"
+      placeholder="Enter email" 
+      required
+    >
+    <button type="submit">Subscribe</button>
+  </form>
 </div>
   </div>
 
   <div class="footer-bottom">
     <p>© 2026 Stackly. All rights reserved.</p>
-    <p>Privacy • Terms • Support</p>
+<p>
+  <a href="404.html">Privacy</a> • 
+  <a href="404.html">Terms</a> • 
+  <a href="404.html">Support</a>
+</p>
   </div>
 
 </footer>
@@ -1628,6 +1901,26 @@ function toggleMenu() {
 }
 
   </script>
+
+  <script>
+  function handleSubscribe(event) {
+    event.preventDefault(); // stop default refresh
+
+    const email = document.getElementById("newsletterEmail").value;
+
+    // simple professional email validation
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailPattern.test(email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+
+    // Simulate: terms accepted + data valid
+    // Redirect to 404.html
+    window.location.href = "404.html";
+  }
+</script>
 
 </body>
 </html>
